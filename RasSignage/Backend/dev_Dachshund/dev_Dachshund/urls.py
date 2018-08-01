@@ -1,21 +1,16 @@
-"""dev_Dachshund URL Configuration
+from django.conf.urls import url
+from api.views import Board_api,Content_Rotation_api
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
+ #아래 작업을 위해 views에서 Board_api와 Content_Rotation_api를 import 한다.
+ #즉, 왼쪽의 views.py의 코드에도 작업이 요한다.
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
+    # url은 소문자밖에 안되는 것인가?
+
+    url(r'^board/',Board_api.as_view()),
+    # 서버 주소/board 의 url로 요청이 들어오면, board_api.as_view()를 반환한다.
+
+    url(r'^content/rotation/', Content_Rotation_api.as_view())
+    # 서버 주소/content/rotation 의 url로 요청이 들어오면, board_api.as_view()를 반환한다.
 ]
