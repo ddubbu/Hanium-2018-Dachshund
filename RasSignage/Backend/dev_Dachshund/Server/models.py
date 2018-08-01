@@ -9,6 +9,7 @@ class Content_Rotation(models.Model):
     Ro_text= models.CharField(max_length=4098)
     Ro_video= models.CharField(max_length=4098)
 
+#DB Content
 class Content(models.Model):
     Name = models.IntegerField(primary_key=True)
 #DB Board
