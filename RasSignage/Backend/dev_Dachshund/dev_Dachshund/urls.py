@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from api.views import Board_api,Content_Rotation_api
+from Server.views import Board_api,Content_Rotation_api
 
  #아래 작업을 위해 views에서 Board_api와 Content_Rotation_api를 import 한다.
  #즉, 왼쪽의 views.py의 코드에도 작업이 요한다.

@@ -21,4 +21,4 @@ class Board(models.Model): # 괄호안에 있는 것은 상속받을 부모임. 
     description = models.TextField(blank=True) #여러 줄의 문자열 입력이 가능한 models.TextField
     published_date = models.DateTimeField(blank=True, null=True)
    # id = models.AutoField(primary_key=True)
-    No_Setting= models.ManyToManyField(Content, through='Content_Rotation')
+   # No_Setting= models.ManyToManyField(Content, through='Content_Rotation')

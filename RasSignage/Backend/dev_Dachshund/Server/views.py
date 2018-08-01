@@ -1,6 +1,6 @@
 from rest_framework.generics import GenericAPIView #mixins과 함께 CRUD 기능을 제공할 것이다.
 from rest_framework import serializers , mixins
-from api.models import Board, Content_Rotation #api파일 내의 models.py에서 class 2개 추출해 import
+from Server.models import Board, Content_Rotation #api파일 내의 models.py에서 class 2개 추출해 import
 
 #개념#
 # 시리얼라이저는 가져올 Model과 1:1이 되어 Dataase 언어를 Python으로 바꾸어준다.
