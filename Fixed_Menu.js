@@ -28,7 +28,7 @@ const MenuLayout = () => (
 
         <Dropdown item simple text='Contents'>
           <Dropdown.Menu>
-            <Dropdown.Item>기본 설정</Dropdown.Item>
+            <Dropdown.Item>기본 설정</Dropdown.Item>            
             <Dropdown.Item>컨텐츠 관리</Dropdown.Item>
             <Dropdown.Item>컨텐츠 등록</Dropdown.Item>
           </Dropdown.Menu>
