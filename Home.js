@@ -119,12 +119,6 @@ class MobileContainer extends Component {
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Menu.Item as='a' active>
-              Home
-            </Menu.Item>
-            <Menu.Item as='a'>Board</Menu.Item>
-            <Menu.Item as='a'>Contents</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
