@@ -19,20 +19,20 @@ const MenuLayout = () => (
         </Menu.Item>
       
 
-        <Dropdown item simple text='Board'>
-          <Dropdown.Menu>
-            <Dropdown.Item>등록 게시판 모아보기</Dropdown.Item>
-            <Dropdown.Item>승인 대기 게시판 목록</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+                <Dropdown text='Boards' simple item as='a'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item text='등록된 게시판' href='http://localhost:3000/IN_BM_Board_DM'/>
+                    <Dropdown.Item text='승인 대기' href='http://localhost:3000/IN_BM_Board_WaitList'/>
+                  </Dropdown.Menu>
+                </Dropdown>  
 
-        <Dropdown item simple text='Contents'>
-          <Dropdown.Menu>
-            <Dropdown.Item>기본 설정</Dropdown.Item>            
-            <Dropdown.Item>컨텐츠 관리</Dropdown.Item>
-            <Dropdown.Item>컨텐츠 등록</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+                <Dropdown text='Contents' simple item as='a'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item text='기본 설정' href='http://localhost:3000/IN_CM_Setting'/>
+                    <Dropdown.Item text='컨텐츠 관리' href='http://localhost:3000/IN_CM_Boards'/>
+                    <Dropdown.Item text='컨텐츠 등록' href='http://localhost:3000/IN_CM_Upload_Md'/>
+                  </Dropdown.Menu>
+                </Dropdown>
 
         <Menu.Item position='right'>
           <Button as='a' inverted>
