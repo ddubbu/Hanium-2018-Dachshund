@@ -104,7 +104,7 @@ class DesktopContainer extends Component {
             >
               <Container>
               <Menu.Item as='a' active>
-              <Image circular src={img_dachshund} size='mini' centered/>                
+              <Image circular src={img_dachshund} size='mini' centered />                
               </Menu.Item>
 
               <Dropdown text='Board' options={options1} simple item as='a'/>
@@ -117,9 +117,7 @@ class DesktopContainer extends Component {
                   <Button as='a' inverted={!fixed}>
                     Log in
                   </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
+                  
                 </Menu.Item>
               </Container>
             </Menu>
@@ -163,7 +161,6 @@ class MobileContainer extends Component {
             <Menu.Item as='a'>Board</Menu.Item>
             <Menu.Item as='a'>Contents</Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
@@ -186,9 +183,7 @@ class MobileContainer extends Component {
                     <Button as='a' inverted>
                       Log in
                     </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                      Sign Up
-                    </Button>
+                    
                   </Menu.Item>
                 </Menu>
               </Container>
