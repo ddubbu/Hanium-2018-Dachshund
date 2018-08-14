@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
 
 import { Home, Login, Initial_Setting,
-    Home_Login,IN_BM_Board_DM} from '../pages';
+    Home_Login,IN_BM_Board_DM,
+    IN_BM_Board_WaitList,
+    IN_CM_Setting,IN_CM_Boards,IN_CM_Upload} from '../pages';
 
 import {
     Button,
@@ -26,76 +28,23 @@ import {
   const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDwXkyOJVwl9tEuVj9Py2FGPK12pB3KCCmRR8l9582h-kjgZVrKQ'
   
 
-class Urls extends Component {
-  render(){
-    return(
-        <div>
+  const Urls = () => (
 
-{//layout이 곂침! 그래서 home url만 따로 뺌.
-}
-<Route exact path ="/home" component={Home}/>
-       
-
-const MenuLayout = () => (
-    <div>
-      <Menu fixed='top' inverted>
-        <Container>
-          <Menu.Item as='a' header>
-            <Image size='mini' src={img_dachshund} circular style={{ marginRight: '1.5em' }} />
-              Dachshund
-          </Menu.Item>
-        
-  
-          <Dropdown item simple text='Board'>
-            <Dropdown.Menu>
-              <Dropdown.Item>등록 게시판 모아보기</Dropdown.Item>
-              <Dropdown.Item>승인 대기 게시판 목록</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-  
-          <Dropdown item simple text='Contents'>
-            <Dropdown.Menu>
-              <Dropdown.Item>기본 설정</Dropdown.Item>            
-              <Dropdown.Item>컨텐츠 관리</Dropdown.Item>
-              <Dropdown.Item>컨텐츠 등록</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-  
-          <Menu.Item position='right'>
-            <Button as='a' inverted>
-              Log out
-            </Button>
-          </Menu.Item>
-  
-        </Container>
-      </Menu>
-  
-      <Segment style={{background: '#FAFAFA'}}>
-  
-      <Container centered style={{ marginTop: '3em'}}>
-            
-
-
-{//url 만드는 곳
-}            
-            
+//url 만드는 곳
+          
+<div> 
+            <Route exact path ="/" component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/Initial_Setting" component={Initial_Setting}/>
             <Route path="/Home_Login" component={Home_Login}/>
             <Route path="/IN_BM_Board_DM" component={IN_BM_Board_DM}/>
+            <Route path="/IN_BM_Board_WaitList" component={IN_BM_Board_WaitList}/>
+            <Route path="/IN_CM_Setting" component={IN_CM_Setting}/>
+            <Route path="/IN_CM_Boards" component={IN_CM_Boards}/>
+            <Route path="/IN_CM_Upload" component={IN_CM_Upload}/>
 
-            <Button href='http://localhost:3000/home'> Go to home </Button>
-            
-            
-       <br/><br/><br/><br/><br/>
-    </Container>
-  </Segment>
-  </div>
+          <br/><br/><br/><br/><br/>
+
+</div>
 )
-
-export default MenuLayout            
-        </div>
-    );
-  }
-}
-export default Urls;
+export default Urls

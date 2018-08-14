@@ -3,3 +3,7 @@ export { default as Login } from './Login';
 export { default as Initial_Setting } from './Initial_Setting';
 export { default as IN_BM_Board_DM } from './IN_BM_Board_DM';
 export { default as Home_Login } from './Home_Login';
+export { default as IN_BM_Board_WaitList } from './IN_BM_Board_WaitList';
+export { default as IN_CM_Setting } from './IN_CM_Setting';
+export { default as IN_CM_Boards } from './IN_CM_Boards';
+export { default as IN_CM_Upload } from './IN_CM_Upload';
