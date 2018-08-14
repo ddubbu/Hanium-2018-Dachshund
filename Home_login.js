@@ -11,14 +11,26 @@ import {
   Segment,
   Sidebar,
   Visibility,
+  Dropdown,
 } from 'semantic-ui-react'
        
+const options1 = [
+    { key: 1, text: '등록 게시판 모아보기', value: 1 },
+    { key: 2, text: '승인 대기 게시판 목록', value: 2 },
+]
+
+const options2 = [
+    { key: 1, text: '기본 설정', value: 1 },
+    { key: 2, text: '컨텐츠 관리', value: 2 },
+    { key: 3, text: '컨텐츠 등록', value: 3 },
+]
+
 
 const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDwXkyOJVwl9tEuVj9Py2FGPK12pB3KCCmRR8l9582h-kjgZVrKQ'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/>
     <Image circular src={img_dachshund} size='medium' centered/>  
      
     <Header
@@ -42,7 +54,6 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-   
     <br/>
     <br/>
     <br/>
@@ -83,7 +94,32 @@ class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
+            <Menu
+              fixed={fixed ? 'top' : null}
+              inverted={!fixed}
+              pointing={!fixed}
+              secondary={!fixed}
+              size='large'
+            >
+              <Container>
+              <Menu.Item as='a' active>
+              <Image circular src={img_dachshund} size='mini' centered />                
+              </Menu.Item>
+
+              <Dropdown text='Board' options={options1} simple item as='a'/>
+                
+              <Dropdown text='Contents' options={options2} simple item as='a'/>
+                
+                
             
+                <Menu.Item position='right'>
+                  <Button as='a' inverted={!fixed}>
+                    Log out
+                  </Button>
+                  
+                </Menu.Item>
+              </Container>
+            </Menu>
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -118,6 +154,12 @@ class MobileContainer extends Component {
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
+            <Menu.Item as='a' active>
+              Home
+            </Menu.Item>
+            <Menu.Item as='a'>Board</Menu.Item>
+            <Menu.Item as='a'>Contents</Menu.Item>
+            <Menu.Item as='a'>Log out</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
@@ -138,7 +180,7 @@ class MobileContainer extends Component {
                   </Menu.Item>
                   <Menu.Item position='right'>
                     <Button as='a' inverted>
-                      log out
+                      Log out
                     </Button>
                     
                   </Menu.Item>
