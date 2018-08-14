@@ -30,7 +30,7 @@ const MenuLayout = () => (
                   <Dropdown.Menu>
                     <Dropdown.Item text='기본 설정' href='http://localhost:3000/IN_CM_Setting'/>
                     <Dropdown.Item text='컨텐츠 관리' href='http://localhost:3000/IN_CM_Boards'/>
-                    <Dropdown.Item text='컨텐츠 등록' href='http://localhost:3000/IN_CM_Upload_Md'/>
+                    <Dropdown.Item text='컨텐츠 등록' href='http://localhost:3000/IN_CM_Upload'/>
                   </Dropdown.Menu>
                 </Dropdown>
 
