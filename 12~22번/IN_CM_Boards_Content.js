@@ -53,7 +53,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 }
 
   <Button inverted color='olive'>
-    <Card>
+    <Card fluid='false'>
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
         <Card.Header>Board1</Card.Header>
@@ -91,7 +91,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 {//2번 그림
 }
 <Button inverted color='pink'>
-    <Card >
+    <Card fluid='false' >
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/molly.png' />
         <Card.Header>Board2</Card.Header>
@@ -130,7 +130,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 {//3번 그림
 }
 <Button inverted color='blue'>
-    <Card >
+    <Card fluid='false' >
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg' />
         <Card.Header>Board3</Card.Header>
@@ -168,7 +168,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 {//4번 그림
 }
 <Button inverted color='red'>
-    <Card>
+    <Card fluid='false'>
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg' />
         <Card.Header>Board4</Card.Header>
@@ -204,7 +204,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 <Grid.Column width={4}>{//5번 그림
 }
 <Button inverted color='blue'>
-    <Card >
+    <Card fluid='false'>
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg' />
         <Card.Header>Board3</Card.Header>
@@ -240,7 +240,7 @@ const img_dachshund  ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDw
 }
 <Grid.Column width={4}>
  <Button inverted color='olive'>
-    <Card>
+    <Card fluid='false'>
       <Card.Content>
         <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
         <Card.Header>Board1</Card.Header>
