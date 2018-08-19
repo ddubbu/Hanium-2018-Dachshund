@@ -1,0 +1,72 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+<!-- Main content -->
+<section class="content" ng-controller="MainController">
+  <div class="row">
+     <div class="col-md-12">
+          <!-- Box Comment -->
+          <div class="box box-widget bg-black bg-purple">
+            <div class="box-body text-center" style="background: url('images/dog-silhouette-1381342164JdZ.jpg') center center;">
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin == false">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <br/>
+              <p><h3>지금 바로 시작하세요.</h3></p>
+                <button type="button" class="btn btn-info btn-lg" ng-click="Login()">Log in now 
+                    <i class="fa fa-fw fa-arrow-right"></i></button>
+            </div>
+            <!-- /.box-footer -->
+
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <br/>
+              <p><h3>메뉴를 선택하세요.</h3></p>
+            </div>
+            <!-- /.box-footer -->
+
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+
+
+  </div>
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>
