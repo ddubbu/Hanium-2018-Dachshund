@@ -1,37 +1,41 @@
-<nav class="navbar navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="/#!/" class="navbar-brand"><b>Dachshund</b> Digital Board</a>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-        <i class="fa fa-bars"></i>
-      </button>
-    </div>
-
-    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/#!/board">Board</a></li>
-          
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Contents<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="/#!/managecontent">콘텐츠 관리</a></li>
-              <li><a href="/#!/addcontent">콘텐츠 등록</a></li>
-              <li><a href="/#!/rotation">반복주기 설정</a></li>
+<nav class="navbar navbar-light bg-black">
+  
+    <br/>
+      <h1 align='center'>
+          <a href='/#'>
+          <img src="https://trello-attachments.s3.amazonaws.com/5a8cbf7fae18c948ed9e157b/5b6abbdd391cec186c522199/197e2145f1fc27830eee291fd11f4bce/%EA%B7%B8%EB%A6%BC3.png" width="45" height="45" class="img-circle" alt="img ERR"/>
+          &nbsp;&nbsp;Dachshund Digital Board</a>
+      </h1>
+  </nav>
+  
+  <nav class="navbar navbar-static-top bg-black">
+      <div class="container">
+  
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/#!/board">Board</a></li>
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Contents<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/#!/managecontent">컨텐츠 관리</a></li>
+                  <li><a href="/#!/addContent">컨텐츠 등록</a></li>
+                  <li><a href="/#!/rotation">반복주기 설정</a></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
+          </div>
+  
+  
+  
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+              <li ng-if="isLogin"><a ng-click="logout()">logout</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-custom-menu -->
+  
       </div>
-
-
-
-    <!-- Navbar Right Menu -->
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-          <li ng-if="isLogin"><a ng-click="logout()">logout</a></li>
-      </ul>
-    </div>
-    <!-- /.navbar-custom-menu -->
-
-  </div>
-  <!-- /.container-fluid -->
-</nav>
+      <!-- /.container-fluid -->
+    </nav>

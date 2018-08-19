@@ -47,16 +47,21 @@
 
                           <div class="col-sm-12 border-right">
                             <div class="description-block">
-                                <div class="col-sm-6 border-right">
-                                <button class="btn btn-default btn-block btn-flat"
+                                <div class="col-sm-4 border-right">
+                                <button class="btn btn-danger btn-block btn-flat"
                                         ng-click="deleteBoard($index)"
                                         data-toggle="modal" data-target="#modal-delete">삭제</button>
                                 </div>
-                                <div class="col-sm-6 border-right">
-                                <button class="btn btn-block btn-danger btn-flat"
+                                <div class="col-sm-4 border-right">
+                                <button class="btn btn-block btn-info btn-flat"
                                         ng-click="updateBoard($index)"
                                         data-toggle="modal" data-target="#modal-update">수정</button>
                                 </div>
+                                <div class="col-sm-4 border-right">
+                                    <button class="btn btn-block btn-success btn-flat"
+                                            ng-click="updateBoard($index)"
+                                            data-toggle="modal" data-target="#modal-update">승인</button>
+                                    </div>
                             </div>
                             <!-- /.description-block -->
                           </div>
