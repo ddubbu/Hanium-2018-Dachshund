@@ -18,7 +18,7 @@ app.controller('LoginController',
 
         $scope.user = {
             userId: 'admin',
-            password: '111111' 
+            password: '1234' 
         };
 
         $scope.changepwuser = {
@@ -36,32 +36,48 @@ app.controller('LoginController',
             $scope.error = '';
         } 
 
+
+//actionLogin        
         $scope.actionLogin = function() {
 
-
+            
             let user = {
                 userId: $scope.user.userId,
                 password: $scope.user.password
             }
 
 
+//먼저 로그인이 되야 비번변경이 됨.
             RequestFactory.post('/login', user)
-                          .then(function onSuccess(response) {
+                        .then(function onSuccess(response) {
+
                                 if (response.status === 200) {
                                     AuthenticationFactory.saveAuthentication({userId: $scope.user.userId});
                                     $rootScope.$broadcast('userLoggedIn');
-                                    $location.path('/admin');
+                                    
+                                    //1234 초기비번으로 접속하면 변경하게 만들기.
+                                    if((user.password=='1234')){
+                                        console.log('비번!!')
+                                        $location.path('/resetPassword')
+                                    }                                    
+                                    else{
+                                        $location.path('/admin');
+                                    }
                                 }
                                 else {
                                     $scope.error = response.data.message;  
                                 }
                                 
-                          }, function onError(response) {
-                              $scope.error = response.data.message;
-                          })
+                        }, function onError(response) {
+                            $scope.error = response.data.message;
+
+
+                        })
+
         }
+//로그인 끝
 
-
+//password 변경 창
         $scope.resetPassword = function() {
             $location.path('/resetPassword')
         }
@@ -79,7 +95,7 @@ app.controller('LoginController',
 
 
             RequestFactory.put('/api/user', user)
-                          .then(function onSuccess(response) {
+                        .then(function onSuccess(response) {
                                 if (response.status === 200) {
                                     console.log(response)
                                     
@@ -92,9 +108,9 @@ app.controller('LoginController',
                                     $scope.error = response.data.message;  
                                 }
                                 
-                          }, function onError(response) {
-                              $scope.error = response.data.message;
-                          })
+                        }, function onError(response) {
+                            $scope.error = response.data.message;
+                        })
         }
-    }
+        }
 ]);
