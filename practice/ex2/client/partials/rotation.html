@@ -1,0 +1,109 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+        <!-- Main content -->
+        <section class="content" ng-controller="RotationController" ng-init="init2()">
+            <div class="row">
+
+
+                <div class="box box-widget no-border">
+                    <div class="box-header">
+                        <div class="user-block text-center">
+                            <br /><br />
+                            <h1>반복주기 설정</h1>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+
+
+                    <div class="box-body">
+
+
+                        <div class="col-md-3" />
+                        <div class="col-md-6">
+                            <div class="box box-widget widget-user">
+                                <!-- Add the bg color to the header using any of the bg-* classes -->
+                                <div class="widget-user-header bg-black" style="background: url('/lib/admin-lte/dist/img/photo1.png') center center;">
+                                </div>
+
+                                <div class="box-footer">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Text</label>
+                                                    <select class="form-control" ng-model="ro.Text">
+                                                        <option>100</option>
+                                                        <option>200</option>
+                                                        <option>300</option>
+                                                        <option>400</option>
+                                                        <option>500</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputFile">Image</label>
+                                                    <select class="form-control" ng-model="ro.Image">
+                                                        <option>100</option>
+                                                        <option>200</option>
+                                                        <option>300</option>
+                                                        <option>400</option>
+                                                        <option>500</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputFile">Media</label>
+                                                    <select class="form-control" ng-model="ro.Media">
+                                                        <option>100</option>
+                                                        <option>200</option>
+                                                        <option>300</option>
+                                                        <option>400</option>
+                                                        <option>500</option>
+                                                    </select>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-primary"
+                                                        ng-click="actionSaveRotation()">
+                                                    save
+                                                </button>
+                                            </form>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                        </div>
+                        <!-- /.widget-user -->
+                    </div>
+                    <!-- /.col-md-6 -->
+
+
+
+
+
+
+
+
+                </div>
+                <!-- /.box-body -->
+
+            </div>
+
+
+
+
+    </div>
+    <!-- /.col -->
+    </section>
+
+
+</div>
+</div>

@@ -1,0 +1,136 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+<!-- Main content -->
+<section class="content" ng-controller="BoardController">
+  <div class="row">
+
+    <div class="box-header with-border">
+              <div class="user-block">
+                    <br/><br/>
+                <h1>컨텐츠 모아보기</h1>
+                <br/>
+                <br/>
+                </div>
+              <!-- /.box-tools -->
+            </div>
+            <div class="col-sm-12 border-center">
+                    <div class="col-sm-4 border-center">
+                            <div class="col-sm-4 border-center">
+                    <div class="btn btn-block bg-aqua btn-sm">전체 선택</div>
+                    </div>
+                    <div class="col-sm-4 border-center">
+                    <button class="btn btn-danger btn-block btn-sm"
+                     ng-click="deleteBoard($index)"
+                       data-toggle="modal" data-target="#modal-delete">삭제</button></div>
+                        
+                     <div class="col-sm-4 border-center">
+                    <a href="/#!/addContent" class="btn btn-block bg-success btn-sm">편집</a>
+                    </div>
+                    </div>
+                    </div>
+                     </div>
+                    <br/>
+                    <br/>
+
+            <div class="container">
+            <div class="row">
+            <div class="card" > <!-- /.1번 -->
+                <div class="col-md-4" >
+                    <div class="box box-warning">
+                    <div class="row">
+                    <div class="col-sm-12 border-right">
+
+                    <div class="col-sm-12 border-right">
+                            <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                             </div>
+                             <!--이미지-->
+                    <h1 align='center'></h1>
+                <img class="card-img-top" src="http://www.lgchem.com/upload/file/advertising-media/energy_1.jpg" width="300" height="300" alt="Card image"></h1>
+                        </div>
+                    </div>
+                 </div>
+                </div>
+           </div>
+          </div>
+
+          <div class="card" ><!-- /.2번 -->
+                <div class="col-md-4" >
+                    <div class="box box-warning">
+                    <div class="row">
+                    <div class="col-sm-12 border-right">
+
+                    <div class="col-sm-12 border-center" >
+                            <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                             </div>
+                             <!--텍스트-->
+                    <h1 align='center'></h1>
+                    <p class="card-text"  style="height : 300px;">
+                        Some example text.
+                            This is a longer card with supporting text below as a natural lead-in to additional content. 
+                            This content is a little bit longer.Some example text.
+                            This is a longer card with supporting text below as a natural lead-in to additional content. 
+                            This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                 </div>
+                </div>
+           </div>
+          </div>
+
+          <div class="card" ><!-- /.3번 -->
+                <div class="col-md-4" >
+                    <div class="box box-warning">
+                    <div class="row">
+                    <div class="col-sm-12 border-right">
+
+                    <div class="col-sm-12 border-right">
+                            <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                             </div>
+                             <!--동영상-->
+                            <div class="embed-responsive embed-responsive-16by9" style="height : 330px;" >
+                                    <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/IHNzOHi8sJs" ></iframe>
+                                  </div>
+                        </div>
+                    </div>
+                 </div>
+                </div>
+           </div>
+          </div>
+
+        
+        </div>
+
+
+        <div class="modal fade" id="modal-delete">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Delete Board</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>삭제하시겠습니까?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                      <button type="button" ng-click="actionDeleteBoard()" data-dismiss="modal" class="btn btn-primary">Yes</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+              </div>
+              <!-- /.modal -->
+    </div>
+        </div>
+    </section>
+</div>
+</div>

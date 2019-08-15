@@ -1,0 +1,72 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+        <!-- Main content -->
+        <section class="content" ng-controller="BoardController" ng-init="init()">
+            <div class="row">
+
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <br /><br />
+                        <h1>Board list</h1>
+                        <br />
+                        <br />
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+
+
+                <div ng-repeat="item in items" ng-switch on="item.IsApproval">
+                    <div ng-switch-when="1">
+                        <div class="card">
+                            <div class="col-md-6">
+
+                                <div class="box box-warning">
+
+                                    <div class="row">
+                                        <div class="col-sm-12 border-right">
+                                            <h2 class="card-header" ng-bind="item.Name"></h2>
+                                            <h1 align='center'>
+                                                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZDUCFfBTz6j7I1de5pbOYwiOVyGlKgRCHLdQiiDt7jb-Phwye" alt="Card image">
+                                            </h1>
+                                            <div class="card-body">
+                                                <h3 class="card-title" ng-bind="item.Location"></h3>
+                                                <p class="card-text">Some example text.</p>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- /.box-tools -->
+
+                                        <div class="col-sm-12 border-right">
+                                            <div class="description-block">
+                                                <div class="col-sm-3 border-right">
+                                                    <a href="/#!/content_all" class="btn btn-block bg-maroon btn-sm">모아보기</a>
+                                                </div>
+                                                <div class="col-sm-3 border-right">
+                                                    <a href="/#!/content_text" class="btn btn-block bg-olive btn-sm">텍스트</a>
+                                                </div>
+                                                <div class="col-sm-3 border-right">
+                                                    <a href="/#!/content_image" class="btn btn-block bg-yellow btn-sm">이미지</a>
+                                                </div>
+                                                <div class="col-sm-3 border-right">
+                                                    <a href="/#!/content_video" class="btn btn-block bg-aqua btn-sm">동영상</a>
+                                                </div>
+                                            </div>
+                                            <!-- /.description-block -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+        </section>
+    </div>
+
+</div>
+

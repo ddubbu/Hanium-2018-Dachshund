@@ -1,0 +1,103 @@
+<!--Window html 해야할 작업
+1. 각 board별 컨텐츠 모조리 가져오기
+2. Text, Image, Video 별로 묶어서 출력하기
+3. 그럴려면 DB에서 가져오는 구문 추가하기-->
+
+<!--가장 큰 상위 section에 controller랑 init 값 설정해주기
+class upper_bar 내가 정함-->
+<section class="upper_bar" style="background-color: white " ng-controller="WindowController" ng-init="init_Content()">
+
+  
+
+
+
+
+
+
+
+  <h1>안녕하세요</h1>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <div ng-repeat="src in List_Image_src">
+    <img  id="slide" src="{{src}}" >
+  </div>
+
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <div id="slideshow2">
+    <div>
+      <img src="{{List_Image_src[0]}}">
+    </div>
+    <div>
+      <img src="{{List_Image_src[1]}}">
+    </div>
+  </div>
+
+
+  <div id="slideshow" >
+      <div ng-repeat="src in List_Image_src">
+          <img src="{{src}}" >
+      </div>
+      <div>
+        <img src="http://farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
+      </div>
+   </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+<style type="text/css">
+  .td_3 {
+    width: 150px
+  }
+
+  .img_size {
+    width: 200px;
+    height: 150px;
+  }
+
+
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#slideshow2 {
+  margin: 80px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow2 > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+
+
+
+</style>

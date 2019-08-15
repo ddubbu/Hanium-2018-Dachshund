@@ -1,0 +1,259 @@
+<!--
+    문제점
+
+    ng-model을 통해
+    init_Modify에서 가져온 정보를 미리 출력도 해두고, 수정하면 값이 가져와지는 것도 ok
+    but text만 가능...
+    selected는 어케 하냐
+-->
+
+
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+        <!-- Main content           요고 뺌 ng-init="init3()"> 이거는 수정시에 데이터 로드할때 필요할듯-->
+        <section class="content" ng-controller="ContentController" ng-init="init_Modify()">
+            <div class="row">
+                <div class="box box-widget no-border">
+                    <div class="box-header">
+                        <div class="user-block text-center">
+                            <h1>Modi Content</h1>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+
+
+                    <div class="box-body">
+                        <div class="box box-widget widget-user">
+                            <!-- Add the bg color to the header using any of the bg-* classes -->
+                            <div class="widget-user-header bg-black" style="background: url('/lib/admin-lte/dist/img/photo1.png') center center;">
+                            </div>
+
+                            <div class="box-footer">
+                                <form role="form" enctype="multipart/form-data">
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <label>게시판</label>
+
+
+                                            <select class="form-control" ng-model="inputData.B_sel">
+                                                <option selected>{{store.Name}}</option>
+                                                <!--ng-selected="store.Name 로 대체 하고 싶군..-->
+                                                <option id="board" value="{{item.Name}}" ng-repeat="item in items" ng-bind="item.Name" ng-if="(item.IsApproval == 1)&&(store.Name!=item.Name)">
+                                                    <!--이미 선택되있던 board 네임은 출력하지 않기 위한 if 문.-->
+                                                </option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>컨텐츠ss</label>
+                                            <select class="form-control" ng-model='inputData.T_sel'>
+                                                <!--<option selected>{{store.Type}}</option
+                                                    얘는 이거 없어도 자동으로 선택이 되있음.>-->
+                                                <option value="{{item.T}}" ng-repeat="item in List_Type" ng-bind="item.T"></option>
+                                            </select>
+                                        </div>
+                                        <!-- /.col            -->
+
+                                        <div class="col-sm-12">
+                                            <br />
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <!--★                                  편집시에도 오늘날짜이후부터 
+                                                되도록 일단은 세팅을 어케...?ㅋㅋ
+                                            
+                                            
+                                            -->
+                                            <label>시작일</label>
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input type="text" class="form-control pull-right" id="datepicker1" ng-model='inputData.start_date'>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+                                            <label>종료일</label>
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input type="text" class="form-control pull-right" id="datepicker2" ng-model='inputData.end_date'>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-12">
+                                            <br />
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <label>제목</label>
+                                            <input class="form-control pull-right" ng-model="inputData.Title">
+                                            </input>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <br />
+                                        </div>
+
+
+                                        <div class="col-sm-12" ng-switch on="inputData.T_sel">
+                                            <!-- /.Text를 선택하면 -->
+                                            <div ng-switch-when="Text">
+
+                                                <label>내용</label>
+                                                <div class="input-group date">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-tasks"></i>
+                                                    </div>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..." ng-model="inputData.Main">
+                                                    </textarea>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+
+                                            <div ng-switch-when="Image">
+                                                <label>이미지</label>
+                                                <div class="input-group date">
+                                                    <div class="input-group-addon">
+                                                        <div class="btn btn-info pull-left" ngf-select ng-model="files" name="file" ngf-pattern="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                                                            ngf-resize="{width: 100, height: 100}">Select</div>
+                                                        <button class="btn but-info" ng-click="upload(files)">submit</button>
+                                                        <div>
+                                                            선택한 사진
+                                                            <img src="{{inputData.Main}}">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+
+
+                                            <!-- /.동영상은 아직-->
+                                            <div ng-switch-when="Media">
+                                                <label> 동영상</label>
+                                                <div class="input-group date">
+                                                    <div class="input-group-addon">
+
+                                                        <!--우선 이미지파일처럼 업로드하는걸로 두자, 동영상꺼는 주석처리
+                                                    
+                                                    <div class="btn btn-info pull-left" 
+                                                        ngf-select ng-model="vfiles" 
+                                                        name="file2" 
+                                                        ngf-pattern="'video/*'"
+                                                        ngf-max-size="100MB" ngf-min-height="100"
+                                                        ngf-resize="{width: 100, height: 100}">Select</div>
+                                                    <button class="btn but-info" ng-click="upload(vfiles)">submit</button>-->
+
+
+                                                        <div class="btn btn-info pull-left" ngf-select ng-model="files" name="file" ngf-pattern="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                                                            ngf-resize="{width: 100, height: 100}">Select</div>
+                                                        <button class="btn but-info" ng-click="upload(files)">submit</button>
+
+                                                    </div>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+
+                                        <div class="col-sm-12">
+                                            <br />
+                                            <div class="col-xs-12 text-center text-danger" ng-show="error">
+                                                <strong data-ng-bind="error"></strong>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-12">
+                                            <button type="submit" id="insert" class="btn btn-info pull-right" ng-click='togoModify()'>Sign in</button>
+                                        </div>
+
+
+                                    </div>
+                                    <!-- /.row -->
+                                </form>
+                            </div>
+                            <!--box-footer-->
+
+                        </div>
+                        <!-- /. <div class="box box-widget widget-user">-->
+                    </div>
+                    <!--/.<div class="box-body">-->
+
+
+
+                </div>
+                <!-- /.box box-widget no-border"> -->
+
+
+
+
+
+
+            </div>
+            <!-- /.row -->
+        </section>
+
+
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+
+        //Date picker
+        $('#datepicker1').datepicker()
+        //autoclose: true
+
+
+        //Date picker
+        $('#datepicker2').datepicker({
+
+            // autoclose: true,
+            startDate: '#datepicker1',
+
+        })
+    })
+</script>
+
+
+
+<!-- 기존 달력 script
+<script>
+    $(function () {
+
+        //Date picker
+        $('#datepicker1').datepicker('setDate', 'today')
+        //autoclose: true
+
+
+        //Date picker
+        $('#datepicker2').datepicker({
+            
+            autoclose: true,
+            startDate: '#datepicker1',
+            
+        })
+    })
+    </script>
+
+-->

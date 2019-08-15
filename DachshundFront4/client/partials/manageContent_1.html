@@ -1,0 +1,151 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+<!-- Main content -->
+<section class="content" ng-controller="BoardController">
+  <div class="row">
+
+
+      <div class="box box-widget">
+            <div class="box-header with-border">
+              <div class="user-block">
+                <h1>Board list</h1>
+                <br/>
+                <br/>
+                </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+
+            <div class="box-body">
+
+                <div class="col-md-6" ng-repeat="item in items">
+                    
+                    <div class="box box-widget widget-user">
+                      <!-- Add the bg color to the header using any of the bg-* classes -->
+                      
+                      <div class="widget-user-header "> 
+                      </div>
+                      
+                      <div class="box box-warning">
+                        <div class="row">
+                          <div class="col-sm-12 border-right">
+
+
+                            <div class="description-block">
+                                <h1 align='right'>
+                                    <img src="/lib/admin-lte/dist/img/photo1.png" "center center;" width="200" height="200"></h1>
+                              <h3 class="text-left">게시판 이름</h3>
+                              <span class="description-text pull-left">위치: 서울시</span>
+                            </div>
+                            <!-- /.description-block -->
+                          </div>
+                          <!-- /.col -->
+
+                          <div class="col-sm-12 border-right">
+                            <div class="description-block">
+                                <div class="col-sm-3 border-right">
+                                <button class="btn btn-block bg-maroon btn-sm"
+                                        ng-click="content_all()"
+                                        data-toggle="modal">모아보기</button>
+                                </div>
+                                <div class="col-sm-3 border-right">
+                                <button class="btn btn-block bg-lime btn-sm"
+                                        ng-click="updateBoard($index)" 
+                                        data-toggle="modal" >텍스트</button>
+                                </div>
+                                <div class="col-sm-3 border-right">
+                                    <button class="btn btn-block bg-yellow btn-sm"
+                                            ng-click="updateBoard($index)"
+                                            data-toggle="modal" >이미지</button>
+                                    </div>
+                                <div class="col-sm-3 border-right">
+                                    <button class="btn btn-block bg-aqua btn-sm"
+                                            ng-click="updateBoard($index)"
+                                             data-toggle="modal" >동영상</button>
+                                    </div>
+                            </div>
+                            <!-- /.description-block -->
+                          </div>
+                          <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                      </div>
+                    </div>
+                    <!-- /.widget-user -->
+                </div>
+                <!-- /.col-md-4 -->
+
+
+
+
+
+
+
+            </div>
+            <!-- /.box-body -->
+
+          </div>
+
+
+
+
+
+
+        <div class="modal fade" id="modal-delete">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Delete Board</h4>
+              </div>
+              <div class="modal-body">
+                <p>삭제하시겠습니까?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                <button type="button" ng-click="actionDeleteBoard()" data-dismiss="modal" class="btn btn-primary">Yes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+        <div class="modal modal-primary fade" id="modal-update">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Update Board</h4>
+              </div>
+              <div class="modal-body">
+               수정 구문
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                <button type="button" ng-click="actionUpdateBoard()" data-dismiss="modal" class="btn btn-primary">Yes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+
+
+  </div>
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>

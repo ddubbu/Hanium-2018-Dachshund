@@ -1,0 +1,46 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="site-wrapper">
+    <div class="cover-container">
+
+<!-- Main content -->
+<section class="content" ng-controller="MainController">
+  <div class="row">
+     <div class="col-md-12">
+          <!-- Box Comment -->
+          <div class="box box-widget ">
+            <div class="box-body text-center">
+              <img src="images/dog-silhouette-1381342164JdZ.jpg" width="500" height="500" alt="img ERR"/>
+
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin == false">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <p><h3>지금 바로 시작하세요.</h3></p>
+                <button type="button" class="btn btn-info btn-lg" ng-click="Login()">Log in now 
+                    <i class="fa fa-fw fa-arrow-right"></i></button>
+            </div>
+            <!-- /.box-footer -->
+
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <p><h3>메뉴를 선택하세요.</h3></p>
+            </div>
+            <!-- /.box-footer -->
+
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+
+
+  </div>
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>

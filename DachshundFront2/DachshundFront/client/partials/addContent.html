@@ -1,0 +1,189 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+<!-- Main content -->
+<section class="content" ng-controller="ContentController">
+  <div class="row">
+
+
+      <div class="box box-widget no-border">
+            <div class="box-header">
+              <div class="user-block text-center">
+                <h1>Add Content</h1>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+
+
+            <div class="box-body">
+                    <div class="box box-widget widget-user">
+                      <!-- Add the bg color to the header using any of the bg-* classes -->
+                      <div class="widget-user-header bg-black" style="background: url('/lib/admin-lte/dist/img/photo1.png') center center;">
+                      </div>
+
+                      <div class="box-footer">
+                        <form role="form">
+                          <div class="row">
+
+                            <div class="col-sm-6">
+                                <label>게시판</label>
+                                 <select class="form-control" ng-model='B_sel'>
+                                   <option>게시판 선택</option>
+                                   <option>option 1</option>
+                                   <option>option 2</option>
+                                   <option>option 3</option>
+                                   <option>option 4</option>
+                                   <option>option 5</option>
+                                 </select>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>컨텐츠</label>
+                                 <select class="form-control">
+                                   <option>컨텐츠 종류</option>
+                                   <option>option 1</option>
+                                   <option>option 2</option>
+                                   <option>option 3</option>
+                                   <option>option 4</option>
+                                   <option>option 5</option>
+                                 </select>
+                            </div>
+                            <!-- /.col -->
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>시작일</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" 
+                                        class="form-control pull-right" 
+                                        id="datepicker1"
+                                        ng-model='start_date'>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <label>종료일</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" class="form-control pull-right" id="datepicker2">
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label>제목</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-sticky-note-o"></i>
+                                  </div>
+                                  <input type="text" class="form-control pull-right">
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                                <label>내용</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-tasks"></i>
+                                  </div>
+                                  <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                                <label>이미지 또는 동영상</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                  </div>
+                                  <input type="file" class="form-control pull-right">
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-info pull-right" ng-click='ActionUpload()'>Sign in</button>
+                            </div>
+
+
+                          </div>
+                        <!-- /.row -->
+                        </form>
+                      </div>
+
+                    </div>
+                    <!-- /.widget-user -->
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+            <!-- /.box-body -->
+
+          </div>
+
+
+
+
+  </div>
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>
+
+
+
+<script>
+  $(function () {
+
+    //Date picker
+    $('#datepicker1').datepicker({
+      autoclose: true
+    })
+
+    //Date picker
+    $('#datepicker2').datepicker({
+      autoclose: true
+    })
+  })
+</script>

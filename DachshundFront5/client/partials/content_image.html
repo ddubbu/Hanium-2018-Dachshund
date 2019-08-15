@@ -1,0 +1,145 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+      <!-- Main content ///이거 뺌.. ng-init="togo(5하면 됨.);init_Main2()" -->
+      <section class="content" ng-controller="ContentController" ng-init="init_Main()">
+        <div class="row">
+          <div class="box-header with-border">
+            <div class="user-block">
+                    <br/><br/>
+                <h1>컨텐츠 이미지</h1>
+                <br/>
+                <br/>
+            </div>
+              <!-- /.box-tools -->
+          </div>
+          <div class="col-sm-12 border-center">
+            <!-- <div class="col-sm-4 border-center">-->
+                <div class="col-sm-4 border-center">
+                        <button  class="btn btn-block bg-aqua btn-sm" id="check_all" >전체 선택</button>
+                </div>
+
+                <div class="col-sm-4 border-center">
+                    <button class="btn btn-danger btn-block btn-sm"
+                      ng-click="deleteContent(item.No)"
+                      data-toggle="modal" data-target="#modal-delete">삭제</button>
+                </div>
+                        
+                <div class="col-sm-4 border-center">
+                              <!--  <button class="btn btn-block btn-warning btn-flat"
+                                ng-click=" ">편집</button> ng-click으로 -->
+                    <button
+                        ng-click="manage_text_selB()"></button>
+                    <a href="/#!/addContent" class="btn btn-block bg-success btn-sm">편집</a>
+                   
+                </div>
+              </div>
+           
+          </div> <!--<div class="row">-->
+                    <br/>
+                    <br/>
+          
+                <div class="card" ><!-- /.1번 -->
+
+                  <div class="col-lg-12" 
+                        ng-repeat="item in items" ng-if="item.Type=='Image'">
+                     <!--   ng-switch on="item.Name">
+
+                    <div ng-switch-when='7'> -->
+                    <div class="box box-warning">
+                      <div class="row">
+                        <!--<div class="col-sm-12 border-right">
+                        </div>-->
+
+                        <div class="col-sm-12 border-right">
+                          <div class="custom-control custom-checkbox">
+                                <input type="checkbox" 
+                                class="custom-control-input" 
+                                name="mycheck" 
+                                ngmodel="aa" 
+                                value="{{item.No}}">
+                          </div>
+                          
+                            <h3 ng-bind =" item.Title"></h3>
+                            <br/>
+                            <p class="card-text" ng-bind= "item.Main" ></p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- /.<div class="card"> -->
+             
+
+           <div class="modal fade" id="modal-delete">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Delete Board</h4>
+                    </div>
+
+                    <div class="modal-body">
+                      <p>삭제하시겠습니까?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                      <button type="button" ng-click="actionDeleteContent()" data-dismiss="modal" class="btn btn-primary">Yes</button>
+                    </div>
+
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+
+
+
+
+        
+              </div>
+              <!-- /.modal -->
+
+
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>    <br/>
+              <br/>
+              <br/>
+              <br/>    <br/>
+              <br/>
+              <br/>
+              <br/>    <br/>
+              <br/>
+              <br/>
+              <br/>
+
+
+    </section>
+  </div><!--/.<div class="container">-->
+       
+</div> <!--<div class="content-wrapper">-->
+
+<script>
+        //최상단 체크박스 클릭
+        $("#check_all").click(function(){
+          if($("input:checkbox[name=mycheck]").is(":checked")==true){
+
+          $("input[name=mycheck]:checkbox").prop("checked", false);
+          }
+          else{
+            $("input[name=mycheck]:checkbox").prop("checked", true);
+          }
+        });
+    
+</script>

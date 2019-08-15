@@ -1,0 +1,190 @@
+<!--Window html 해야할 작업
+1. 각 board별 컨텐츠 모조리 가져오기
+2. Text, Image, Video 별로 묶어서 출력하기
+3. 그럴려면 DB에서 가져오는 구문 추가하기-->
+
+<!--가장 큰 상위 section에 controller랑 init 값 설정해주기
+class upper_bar 내가 정함-->
+<!--절대 섹션 밖으로 내놓지마 ㅜㅜ-->
+<div style="background-color: white; background-size:cover" ng-controller="WindowController" ng-init="init_Content();init_Rotation()">
+
+    <section class="col-md-3"  ></section>
+    <section class="col-md-9 upper_bar"  >
+      <table>
+        <tr>
+          <td style="font-size: 30px; font:bold; width:300px;">
+            {{BoardName}} 게시판
+          </td>
+          <td class="td_upperbar" style="font-size: 20px; font:bold" ng-bind="Date1">{{Date1}}</td>
+          <td class="td_upperbar">
+            <!--시간 위젯-->
+            <iframe src="http://free.timeanddate.com/clock/i6g9wr0a/n235/fs24" frameborder="0" width="193" height="30"></iframe>
+          </td>
+          <td class="td_upperbar">
+            <!--날씨 위젯-->
+            <div id="cont_47e69f1c09749b198f5f0284b33d228c">
+              <script type="text/javascript" async src="https://www.theweather.com/wid_loader/47e69f1c09749b198f5f0284b33d228c"></script>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+  
+  <!--content slide section -->
+  <table class="table_width">
+    <tr>
+      <td> 이미지
+          <div  id="slideshow">
+              <!--<h1>안녕하세요</h1>-->
+              <div ng-repeat="src in List1_Image_src">
+                <img class="img_size" src="{{src}}">
+              </div>
+            </div>
+      </td>
+      <td>동영상
+          <div id="media_slideshow">
+              <!--<h1>안녕하세요</h1>-->
+              <div ng-repeat="src in List_Media_src" class="embed-responsive embed-responsive-16by9">                                        
+                      <iframe class="embed-responsive-item" src="{{src}}" frameborder="0" allowfullscreen=""></iframe>      
+              </div>
+            </div>
+      </td>
+    </tr>
+    <tr>
+      <td>이미지2
+          <div id="slideshow2"  >
+              <div ng-repeat="src in List2_Image_src">
+                  <img class="img_size" src="{{src}}">
+                </div>
+          </div>
+      </td>
+
+      <td>텍스트
+          <div id="text_slideshow" style="background-color: white;"  >
+            <div ng-repeat="M in List_Text_Main">
+                <h1 class="t_title">{{M[0]}}</h1>
+                <h5 class="t_main"> {{M[1]}}</h5>
+            </div>
+          </div>
+      </td>
+    </tr>
+  </table>
+ 
+  
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+
+
+
+
+<style type="text/css">
+/*table 줄 확인을 위함*/
+        table {
+        width: 100%;
+        border: 1px solid #333333;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #333333;
+      }
+      .b {
+        border-collapse: collapse;
+      }
+
+/*table 줄 확인을 위함*/
+
+
+  .table_width{
+    width:200px;
+  }
+
+  .td_upperbar {
+    width: 150px
+  }
+
+  /*id가 img_size인 이미지 크기 설정*/
+
+  .img_size {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*id가 slideshow인 div(검은 그림자 있는)의 크기 설정..*/
+
+  #slideshow {
+    margin: 80px auto;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /*id가 slide인 div 포함 안의 속성임.*/
+
+  #slideshow >div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  #slideshow2 {
+    margin: 80px auto;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /*id가 slide인 div 포함 안의 속성임.*/
+
+  #slideshow2 >div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+
+  #text_slideshow {
+    margin: 80px auto;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  #text_slideshow >div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+     #media_slideshow {
+    margin: 80px auto;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  #media_slideshow >div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+</style>

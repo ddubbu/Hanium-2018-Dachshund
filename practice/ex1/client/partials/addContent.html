@@ -1,0 +1,232 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="content-wrapper">
+    <div class="container">
+
+<!-- Main content           요고 뺌 ng-init="init3()"> 이거는 수정시에 데이터 로드할때 필요할듯-->
+<section class="content" ng-controller="ContentController" ng-init="init3()">
+  <div class="row">
+      <div class="box box-widget no-border">
+            <div class="box-header">
+              <div class="user-block text-center">
+                <h1>Add Content</h1>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+
+
+            <div class="box-body">
+                    <div class="box box-widget widget-user">
+                      <!-- Add the bg color to the header using any of the bg-* classes -->
+                      <div class="widget-user-header bg-black" style="background: url('/lib/admin-lte/dist/img/photo1.png') center center;">
+                      </div>
+
+                      <div class="box-footer">
+                        <form role="form">
+                          <div class="row">
+                            
+                            <!--나중에 No는 자동으로 누적되어 생성되자!
+                            컨텐츠 제목이 나으려나? 노노 우선, 간단히 num으로 하잡-->
+                            <div class="col-sm-4">
+
+                                 <label>게시글 번호</label>
+                                   <input type="text"
+                                          class="form-control pull-right" 
+                                          placeholder="글 번호" 
+                                          ng-model="inputData.No">
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>게시판</label>
+                                 <select class="form-control" 
+                                ng-model='inputData.B_sel'>
+                                <!--
+                                  1.multiselect>
+                                  https://www.npmjs.com/package/ng-dropdown-multiselect
+                                  위에 링크꺼 시도해볼만함.
+                                
+                                  2.db에서 동적으로 게시판 이름 가져오기 <option class="text-center"  ng-repeat="item in items"  ng-bind="item.Name" ></option>-->
+                                      <option id="board" 
+                                      value = "{{item.Name}}" 
+                                      ng-repeat="item in items" 
+                                      ng-bind="item.Name" 
+                                      ng-if="item.IsApproval == 1">
+                                                    
+                                      </option> 
+                                  </select>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label>컨텐츠</label>
+                                 <select class="form-control" 
+                                        ng-model='inputData.T_sel'>
+                                   <option>Text</option>
+                                   <option>Image</option>
+                                   <option>Media</option>
+                                 </select>
+                            </div>
+       <!-- /.col -->
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>시작일</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" 
+                                        class="form-control pull-right" 
+                                        id="datepicker1"
+                                        ng-model='inputData.start_date'>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+
+                            <div class="col-sm-6">
+                                <label>종료일</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" 
+                                        class="form-control pull-right" 
+                                        id="datepicker2"
+                                        ng-model='inputData.end_date'>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+
+                            <div class="col-sm-12">
+                                <label>제목</label>
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-sticky-note-o"></i>
+                                  </div>
+                                  <input type="text" 
+                                        class="form-control pull-right"
+                                        ng-model='inputData.Title'>
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+                            <div class="col-sm-12"
+                                 ng-switch on="inputData.T_sel">
+                                 <!-- /.Text를 선택하면 -->
+                                 <div ng-switch-when="Text">
+
+                                  <label>내용</label>
+                                    <div class="input-group date">
+                                      <div class="input-group-addon">
+                                        <i class="fa fa-tasks"></i>
+                                      </div>
+                                      <textarea class="form-control" 
+                                                rows="3" 
+                                                placeholder="Enter ..."
+                                                ng-model ="inputData.Main">
+                                      </textarea>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+
+                                <div ng-switch-when="Image">
+                                    <label>이미지</label>
+                                    <div class="input-group date">
+                                      <div class="input-group-addon">
+                                      </div>
+                                 
+                                    <input type="file" 
+                                            class="form-control pull-right"
+                                            ng-model ="inputData.Main">
+                                    </div>
+                                    <!-- /.input group -->
+                                    </div>
+                                <div ng-switch-when="Media">
+                                    <label> 동영상</label>
+                                    <div class="input-group date">
+                                      <div class="input-group-addon">
+                                      </div>
+                                      <input type="file" 
+                                            class="form-control pull-right"
+                                            ng-model ="inputData.Main">
+                                    </div>
+                                    <!-- /.input group -->
+                                    </div>                                    
+                            </div>
+
+
+
+                            <div class="col-sm-12">
+                              <br/>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-info pull-right" ng-click='ActionUpload()'>Sign in</button>
+                            </div>
+
+
+                          </div>
+                        <!-- /.row -->
+                        </form>
+                      </div>
+
+                    </div>
+                    <!-- /.widget-user -->
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+            <!-- /.box-body -->
+
+          </div>
+
+
+
+
+  </div>
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>
+
+
+
+<script>
+  $(function () {
+
+    //Date picker
+    $('#datepicker1').datepicker({
+      autoclose: true
+    })
+
+    //Date picker
+    $('#datepicker2').datepicker({
+      autoclose: true
+    })
+  })
+</script>

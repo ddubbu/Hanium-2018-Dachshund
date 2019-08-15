@@ -1,0 +1,38 @@
+<div style="background-color: white; background-size:cover" ng-controller="WindowController" ng-init="init_BoardList()">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    Board를 선택하세요
+    ※클릭이 안되면 승인 대기 중임
+    <br/><br/>
+    <div ng-repeat="item in items">
+      <input type="radio" name="boardlist" 
+      ng-model="BoardName" ng-change="windowchoose(item.Name)"
+      ng-if="item.IsApproval==1">
+      <input type="radio" name="boardlist" 
+      ng-model="BoardName" ng-change="windowchoose(item.Name)"
+      ng-if="item.IsApproval==0" disabled>{{item.Name}} 
+    </div>
+    <!--버튼 노 필요
+    <button class="btn btn-block bg-aqua btn-sm" ng-click="windowchoose()">Choose</button>
+    <br/>-->
+    
+    <table>
+      <tr>
+        <td>
+            <input placeholder="혹은 Board를 설치하고 추가 생성하고 생성해주세요" ng-model="addB" style="width:360px;">
+        </td>
+        <td>
+            <button class="btn btn-block bg-aqua btn-sm" ng-click="addBoard()">+</button>
+        </td>
+      </tr>
+    </table>
+    
+    
+    <br/>
+
+  </div>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  
+</div>

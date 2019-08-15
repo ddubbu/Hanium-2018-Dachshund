@@ -1,0 +1,174 @@
+<!--<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>-->
+  <header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+  </header>
+
+  <div class="content-wrapper" style="background-color: white;">
+    <div class="container">
+
+      <!-- Main content ///이거 뺌.. ng-init="togo(5하면 됨.);init_Main2()" -->
+      <section class="content" ng-controller="ContentController" ng-init="init_Content()">
+        <div class="row">
+          <div class="box-header with-border">
+            <div class="user-block">
+              <br>
+              <br>
+              <h1>컨텐츠 모아보기</h1>
+              <br>
+              <br>
+            </div>
+            <!-- /.box-tools -->
+          </div>
+          <div class="col-sm-12 border-center">
+            <!-- <div class="col-sm-4 border-center">-->
+            <div class="col-sm-4 border-center">
+              <button class="btn btn-block bg-aqua btn-sm" ng-click="setAllChecked(1)">전체 선택</button>
+            </div>
+
+            <div class="col-sm-4 border-center">
+              <button class="btn btn-danger btn-block btn-sm" data-toggle="modal" data-target="#modal-delete">삭제</button>
+            </div>
+
+            <div class="col-sm-4 border-center">
+              <div ng-click="forcheck()" class="btn btn-block bg-success btn-sm"> 편집 </div>
+            </div>
+
+          </div>
+          <!--<div class="row">-->
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+          <div class="grid-container" style="overflow:hidden; margin:auto; background-color:lightgoldenrodyellow;">
+            <!-- /.1번 -->
+
+            <div class="col-xs-4 border-center" ng-repeat="item in items" style=" height:auto;">
+              <div class="grid-item" style="width:100%; box-sizing:content-box; float:none; padding:5px; ">
+
+                <!--   ng-switch on="item.Name">
+                      
+                    <div ng-switch-when='7'> -->
+
+                <div class="box" style=" box-sizing:content-box;  border-color:lightcoral;">
+                  <!-- <div class="row" style="position:relative; display:grid; flex-wrap:wrap; padding:0 4px;">-->
+                  <!--<div class="col-sm-12 border-right">
+                        </div>-->
+
+                  <div class="col-sm-12 border-right">
+
+                    <!--
+                          <div class="scroll_box" style=" overflow: auto; word-wrap: break-word; 
+                            overflow-x:hidden;  width:350px; height:300px; ">  -->
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" ng-model="item.checked" ng-click="changeCheckBox(item.No)">
+                    </div>
+
+                    <h3 class="box-title" ng-bind="item.Title"></h3>
+                    <div class="col-sm-12 border-center" ng-switch="" on="item.Type">
+                      <!-- /.Text를 선택하면 -->
+                      <div ng-switch-when="Text" text-align="center" style="width: 300px; word-wrap: break-word; ">
+                        <h7 class="text-responsive pad" ng-bind="item.Main"></h7>
+                      </div>
+
+                      <div ng-switch-when="Image" align="center">
+                        <img class="img-responsive pad" src="{{item.Main}}" width="200px">
+                      </div>
+
+                      <div ng-switch-when="Media">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="{{item.Main}}" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.<div class="card"> -->
+
+            <div class="modal fade" id="modal-delete">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title">Delete Board</h4>
+                  </div>
+
+                  <div class="modal-body">
+                    <p>삭제하시겠습니까?</p>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                    <button type="button" ng-click="actionDeleteContent()" data-dismiss="modal" class="btn btn-primary">Yes</button>
+                  </div>
+
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+
+
+
+
+
+            </div>
+            <!-- /.modal -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+      </section>
+      <img src="https://blogfiles.pstatic.net/MjAxODEwMDdfMjE5/MDAxNTM4ODg3NjgzMTc5.zYi5RvyfXIx7SaSpn5_9el_LotkokTuISUKG1Rx6gm8g.nmH7RvqYDQ2hs4Wy5pdchyLtsBDy8mTjxljmkzv9DK4g.JPEG.hey749/%EA%B7%B8%EB%A6%BC1.jpg"
+        align="right" />
+      </div>
+
+      </div>
+      <!--<div class="content-wrapper">-->
+
+      <nav class="navbar navbar-light bg-black" height="30px">
+        <h1 align='left'>
+          <a href='/#!/main'>
+            <img src="https://blogfiles.pstatic.net/MjAxODA5MzBfMTg4/MDAxNTM4Mjg0OTM0NTc0.Lc-cBNRKB1WpVIlhX1N4pi-Bdnhx-iD-zrPcBNvwubAg.5ox5dhkP1y0nT7zxJ71bZeOfwXIRgCG1d5jv6l2OMlsg.JPEG.hey749/%EB%A1%9C%EA%B3%A02.JPG"
+              width="45" height="45" class="img-circle" alt="img ERR" />
+            <ul>
+              <a href="/#!/content_all" style="font-size:0.5em; color: white; text-align:left;">
+                &nbsp;&nbsp;이용약관&nbsp;&nbsp; </a>
+              <a href="/#!/content_all" style="font-size:0.5em; color: white; text-align:left;">
+                &nbsp;&nbsp;개인 정보 보호&nbsp;&nbsp; </a>
+              <a href="/#!/content_all" style="font-size:0.5em; color: white; text-align:left;">
+                &nbsp;&nbsp;소개&nbsp;&nbsp; </a>
+              <a href="/#!/content_all" style="font-size:0.5em; color: white; text-align:left;">
+                &nbsp;&nbsp;E-Mail </a>
+            </ul>
+            &nbsp;&nbsp;</a>
+        </h1>
+      </nav>
+      <!--
+</body>
+
+</html>-->

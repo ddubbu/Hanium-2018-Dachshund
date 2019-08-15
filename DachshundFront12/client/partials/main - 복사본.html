@@ -1,0 +1,81 @@
+
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'">
+</header>
+
+<div class="site-wrapper" style="background-image: url(https://cdn.pixabay.com/photo/2016/11/29/08/41/apple-1868496_1280.jpg);">
+    <div class="cover-container">
+
+<!-- Main content -->
+
+<section class="content" ng-controller="MainController" ng-init="loading()">
+  <div class="row">
+     <div class="col-md-12">
+          <!-- Box Comment -->
+          <div class="box box-widget ">
+            <div class="box-body text-center">
+
+              <!--
+              <style>
+                body{
+                  background-image: url(https://blogfiles.pstatic.net/MjAxODA5MzBfMjU2/MDAxNTM4Mjk1NjE3MDU3.jTtVuTXXiz8AtXjQRCHjGQJJBXrds30STyWiVAojOqQg.Saew-jCiyx2VkNhfLcYvSJE-4yv7wI_EZFTBH6Tbf8wg.JPEG.hey749/%EC%BA%A1%EC%B2%98.JPG);
+                  background-repeat: no-repeat; 
+                  height:100%;  
+                  text-align:center; 
+                  background-position : center center; 
+                  background-attachment : fixed;
+                }
+              </style>-->
+              <img src="images/dog-silhouette-1381342164JdZ.jpg" width="500" height="500" alt="img ERR"/>
+
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin == false">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <p><h3>지금 바로 시작하세요.</h3></p>
+                <button type="button" class="btn btn-info btn-lg" ng-click="Login()">Log in now 
+                    <i class="fa fa-fw fa-arrow-right"></i></button>
+            </div>
+            <!-- /.box-footer -->
+
+
+            <div class="box-footer text-center bg-blue" ng-if="isLogin">
+              <p><h1>Welcome to Dachshund</h1></p>
+              <p><h3>메뉴를 선택하세요.</h3></p>
+            </div>
+            <!-- /.box-footer -->
+
+          </div>
+          <!-- /.box -->
+        </div>
+    </div>
+
+
+  <!-- /.col -->
+</section>
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+  var Start;
+
+  //Show Page main after 3s
+  function OnloadEvent() {
+      Start = setTimeout(showpage, 4000)
+  }
+
+  //Hide animation loader and show page main
+  function showpage() {
+      document.getElementById("loading").style.display = "none";
+      document.getElementsByClassName("content").style.display="block";
+  }
+/*
+$(window).load(function() {
+var Start;
+Start= setTimeout(showpage,3000)
+$('#loading').hide();
+}); */
+
+</script>

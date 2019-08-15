@@ -1,0 +1,157 @@
+<header class="main-header" ng-controller="HeaderController" ng-include="'partials/header.html'"></header>
+
+
+
+
+        <!-- Main content -->
+        <section class="content"  ng-controller="RotationController" ng-init="init2()">
+            <!-- 배경 이미지 opacity: 0.8;position: absolute; " 
+            background-blend-mode 대신 mix-~~
+            그리고 multiply->요게 더 좋음 overlay 둘다 좋음
+        
+        
+        Text만 있는 Main화면에서만 불투명 처리
+    하는 방법-->
+
+
+        <style>
+            .bg-blend {
+        
+        background-image: url(https://images.unsplash.com/photo-1433477221118-6eca20a0d62e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=da0ade88b8207debaf50515aebc4b3f0);
+        background-color: black;
+        mix-blend-mode: multiply ;  
+        background-size: 100%;
+        background-repeat: no-repeat;
+        
+        }
+
+
+        .body {
+        padding: 20px;
+        width: 2000px;
+        }
+        .demo > div {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        }
+        .demo {
+        width: 600px;
+        overflow: hidden;
+        }
+        .screencap {
+        width: 600px;
+        }
+        </style>
+
+
+
+<!--
+        <div class="col-lg-12 bg-blend">
+                <h2 style="color:white;">Live demo:</h2>
+                <h2>Should look likefefef
+                    efef
+                    ef
+                    efefefe:</h2>
+                    <h2>Live demo:</h2><h2>Live demo:</h2><h2>Live demo:</h2><h2>Live demo:</h2>
+        </div>
+
+★★★★★★★★★★★★★★★★★★★
+         bg-blend밑에 class 에다 넣자
+    -->
+
+    <section class="col-lg-12" style="background-color:aliceblue; margin:0;">   
+    <!--<img src="https://images.unsplash.com/photo-1479255833741-74244986c3c7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=b49038c07d4dd9afc1000335b5bafa69"
+                style=
+                "position: absolute; 
+                top: 0%; 
+                left: 0; 
+                right: 0; 
+                bottom: 30%; 
+                margin: 0; 
+                min-width: 100%;
+                min-height: 100%;
+                background-image: url(https://images.unsplash.com/photo-1479255833741-74244986c3c7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=b49038c07d4dd9afc1000335b5bafa69);
+                background-blend-mode: screen;
+                " 
+                />-->
+                <br />
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>                                
+
+
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4" 
+                style="background-color:black; opacity: 0.8;
+                background:url(https://images.unsplash.com/photo-1479255833741-74244986c3c7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=b49038c07d4dd9afc1000335b5bafa69);
+                ">
+               <!--배경이미지에 넣을 수 있다! style="background: url('/lib/admin-lte/dist/img/photo1.png')-->
+                <div class="row">
+                            
+                                <h1 style="font-weight:bold; text-align: center; color: rgb(46, 104, 155)">반복주기 설정</h1>
+                                <br/>
+                                    <div class="col-sm-12">
+
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Text</label>
+                                                <select class="form-control" ng-model="ro.Text">
+                                                    <option>100</option>
+                                                    <option>200</option>
+                                                    <option>300</option>
+                                                    <option>400</option>
+                                                    <option>500</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputFile">Image</label>
+                                                <select class="form-control" ng-model="ro.Image">
+                                                    <option>100</option>
+                                                    <option>200</option>
+                                                    <option>300</option>
+                                                    <option>400</option>
+                                                    <option>500</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputFile">Media</label>
+                                                <select class="form-control" ng-model="ro.Media">
+                                                    <option>100</option>
+                                                    <option>200</option>
+                                                    <option>300</option>
+                                                    <option>400</option>
+                                                    <option>500</option>
+                                                </select>
+                                            </div>
+                                            
+
+                                            <button type="submit" class="btn btn-primary" ng-click="actionSaveRotation()">
+                                                save
+                                            </button>
+                                            <br/>
+                                        </form>                                       
+                                       </div> 
+                                        <!-- /.col-md-12 -->
+                                    </div>
+                                    <!-- /.row -->
+                                    <br/> <br/>
+                                    <br/> <br/>
+                                    <br/> <br/> <br/>
+                                    <br/> <br/>
+                                    <br/> <br/>
+                                    <br/>
+                                </div>
+                                <!-- /.col-md-4 -->
+
+                            </section>
+
+        </section>
+
+
+
